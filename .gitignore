@@ -1,0 +1,4 @@
+/.vs
+/Lexer.Tests/obj
+/Token/bin
+/Token/obj
