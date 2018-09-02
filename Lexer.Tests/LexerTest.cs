@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using Token;
+using TokenNS;
 
 namespace Lexer.Tests
 {
@@ -13,15 +13,15 @@ namespace Lexer.Tests
             var input = "=+(){},;";
 
             var tests = new (TokenType expectedType, string expectedLiteral)[] {
-                ( Token.Token.ASSIGN, "=" ),
-                ( Token.Token.PLUS, "+" ),
-                ( Token.Token.LPAREN, "(" ),
-                ( Token.Token.RPAREN, ")" ),
-                ( Token.Token.LBRACE, "{" ),
-                ( Token.Token.RBRACE, "}" ),
-                ( Token.Token.COMMA, "," ),
-                ( Token.Token.SEMICOLON, ";" ),
-                ( Token.Token.EOF, "" )
+                ( Token.ASSIGN, "=" ),
+                ( Token.PLUS, "+" ),
+                ( Token.LPAREN, "(" ),
+                ( Token.RPAREN, ")" ),
+                ( Token.LBRACE, "{" ),
+                ( Token.RBRACE, "}" ),
+                ( Token.COMMA, "," ),
+                ( Token.SEMICOLON, ";" ),
+                ( Token.EOF, "" )
             };
 
             // Act

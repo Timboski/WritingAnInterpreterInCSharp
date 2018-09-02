@@ -1,4 +1,4 @@
-﻿namespace Token
+﻿namespace TokenNS
 {
     public struct Token
     {
