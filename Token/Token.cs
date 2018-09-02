@@ -2,8 +2,18 @@
 {
     public struct Token
     {
-        public TokenType type;
-        public string literal;
+        public Token(TokenType tokenType, char literal) : this(tokenType, literal.ToString())
+        {
+        }
+
+        public Token(TokenType tokenType, string literal)
+        {
+            Type = tokenType;
+            Literal = literal;
+        }
+
+        public TokenType Type { get; }
+        public string Literal { get; }
 
         // Defined token types.
         // Note: Capitalisation retained to match book examples.

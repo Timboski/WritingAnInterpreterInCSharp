@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using TokenNS;
 
-namespace Lexer.Tests
+namespace LexerNS.Tests
 {
     [TestFixture]
     public class LexerTest
@@ -32,8 +32,8 @@ namespace Lexer.Tests
                 var token = l.NextToken();
 
                 // Assert
-                Assert.Equals(token.Type, expectedType, $"tests[{testIndex}] - tokentype wrong");
-                Assert.Equals(token.Literal, expectedLiteral, $"tests[{testIndex}] - literal wrong");
+                Assert.AreEqual(token.Type, expectedType, $"tests[{testIndex}] - tokentype wrong");
+                Assert.AreEqual(token.Literal, expectedLiteral, $"tests[{testIndex}] - literal wrong");
 
                 ++testIndex;
             }

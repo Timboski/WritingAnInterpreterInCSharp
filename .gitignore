@@ -2,3 +2,6 @@
 /Lexer.Tests/obj
 /Token/bin
 /Token/obj
+/Lexer.Tests/bin
+/**/bin
+/**/obj

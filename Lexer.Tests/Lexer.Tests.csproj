@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Lexer\Lexer.csproj" />
     <ProjectReference Include="..\Token\Token.csproj" />
   </ItemGroup>
 
