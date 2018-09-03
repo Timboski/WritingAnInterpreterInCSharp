@@ -78,6 +78,8 @@ namespace LexerNS
                             return new Token(Token.LookupIdent(identifier), identifier);
                         }
 
+                        if (char.IsDigit(ch)) return new Token(Token.INT, ReadNumber());
+
                         token = new Token(Token.ILLEGAL, ch);
                         break;
                     }
@@ -87,15 +89,19 @@ namespace LexerNS
             return token;
         }
 
+        private string ReadNumber() => ReadSubstringMatchingCriteria(char.IsDigit);
+
         private void SkipWhitespace()
         {
             while (char.IsWhiteSpace(ch)) ReadChar();
         }
 
-        private string ReadIdentifier()
+        private string ReadIdentifier() => ReadSubstringMatchingCriteria(char.IsLetter);
+
+        private string ReadSubstringMatchingCriteria(Func<char, bool> criteria)
         {
             var startPosition = position;
-            while (char.IsLetter(ch)) ReadChar();
+            while (criteria(ch)) ReadChar();
             int length = position - startPosition;
             return input.Substring(startPosition, length);
         }
