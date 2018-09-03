@@ -18,31 +18,72 @@ namespace LexerNS
 
         public Token NextToken()
         {
-            var token = MakeToken();
-            ReadChar();
-            return token;
-        }
+            Token token;
 
-        private Token MakeToken()
-        {
             switch (ch)
             {
-                case '=': return new Token(Token.ASSIGN, ch);
-                case ';': return new Token(Token.SEMICOLON, ch);
-                case '(': return new Token(Token.LPAREN, ch);
-                case ')': return new Token(Token.RPAREN, ch);
-                case ',': return new Token(Token.COMMA, ch);
-                case '+': return new Token(Token.PLUS, ch);
-                case '{': return new Token(Token.LBRACE, ch);
-                case '}': return new Token(Token.RBRACE, ch);
-                case '\0': return new Token(Token.EOF, "");
+                case '=':
+                    {
+                        token = new Token(Token.ASSIGN, ch);
+                        break;
+                    }
+                case ';':
+                    {
+                        token = new Token(Token.SEMICOLON, ch);
+                        break;
+                    }
+                case '(':
+                    {
+                        token = new Token(Token.LPAREN, ch);
+                        break;
+                    }
+                case ')':
+                    {
+                        token = new Token(Token.RPAREN, ch);
+                        break;
+                    }
+                case ',':
+                    {
+                        token = new Token(Token.COMMA, ch);
+                        break;
+                    }
+                case '+':
+                    {
+                        token = new Token(Token.PLUS, ch);
+                        break;
+                    }
+                case '{':
+                    {
+                        token = new Token(Token.LBRACE, ch);
+                        break;
+                    }
+                case '}':
+                    {
+                        token = new Token(Token.RBRACE, ch);
+                        break;
+                    }
+                case '\0':
+                    {
+                        token = new Token(Token.EOF, "");
+                        break;
+                    }
                 default:
                     {
-                        if (!char.IsLetter(ch)) return new Token(Token.ILLEGAL, ch);
-                        var identifier = ReadIdentifier();
-                        return new Token(Token.LookupIdent(identifier), identifier);
+                        if (char.IsLetter(ch))
+                        {
+                            var identifier = ReadIdentifier();
+                            // NOTE: Exit early as ReadIdenfier will have already advanced
+                            // the position to the next token.
+                            return new Token(Token.LookupIdent(identifier), identifier);
+                        }
+
+                        token = new Token(Token.ILLEGAL, ch);
+                        break;
                     }
             }
+
+            ReadChar();
+            return token;
         }
 
         private string ReadIdentifier()
