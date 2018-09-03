@@ -35,7 +35,7 @@ namespace LexerNS
                 case '{': return new Token(Token.LBRACE, ch);
                 case '}': return new Token(Token.RBRACE, ch);
                 case '\0': return new Token(Token.EOF, "");
-                default: throw new System.ArgumentOutOfRangeException($"Unexpected token - {ch}");
+                default: return new Token(Token.ILLEGAL, ch);
             }
         }
 
