@@ -18,8 +18,9 @@ namespace LexerNS
 
         public Token NextToken()
         {
-            Token token;
+            SkipWhitespace();
 
+            Token token;
             switch (ch)
             {
                 case '=':
@@ -84,6 +85,11 @@ namespace LexerNS
 
             ReadChar();
             return token;
+        }
+
+        private void SkipWhitespace()
+        {
+            while (char.IsWhiteSpace(ch)) ReadChar();
         }
 
         private string ReadIdentifier()
