@@ -97,7 +97,7 @@ namespace LexerNS.Tests
                 var token = l.NextToken();
 
                 // Assert
-                Assert.AreEqual(token.Type, expectedType, $"tests[{testIndex}] - tokentype wrong");
+                Assert.AreEqual((string)token.Type, (string)expectedType, $"tests[{testIndex}] - tokentype wrong");
                 Assert.AreEqual(token.Literal, expectedLiteral, $"tests[{testIndex}] - literal wrong");
 
                 ++testIndex;
