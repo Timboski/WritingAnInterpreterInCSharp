@@ -1,7 +1,16 @@
-﻿namespace TokenNS
+﻿using System;
+using System.Collections.Generic;
+
+namespace TokenNS
 {
     public struct Token
     {
+        private static Dictionary<string, TokenType> keywords = new Dictionary<string, TokenType>
+        {
+            {  "fn", Token.FUNCTION },
+            {  "let", Token.LET }
+        };
+
         public Token(TokenType tokenType, char literal) : this(tokenType, literal.ToString())
         {
         }
@@ -43,5 +52,11 @@
         // Keywords
         public static TokenType FUNCTION => "FUNCTION";
         public static TokenType LET => "LET";
+
+        public static TokenType LookupIdent(string identifier)
+        {
+            if (!keywords.ContainsKey(identifier)) return Token.IDENT;
+            return keywords[identifier];
+        }
     }
 }

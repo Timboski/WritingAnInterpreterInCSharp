@@ -1,4 +1,5 @@
-﻿using TokenNS;
+﻿using System;
+using TokenNS;
 
 namespace LexerNS
 {
@@ -35,8 +36,21 @@ namespace LexerNS
                 case '{': return new Token(Token.LBRACE, ch);
                 case '}': return new Token(Token.RBRACE, ch);
                 case '\0': return new Token(Token.EOF, "");
-                default: return new Token(Token.ILLEGAL, ch);
+                default:
+                    {
+                        if (!char.IsLetter(ch)) return new Token(Token.ILLEGAL, ch);
+                        var identifier = ReadIdentifier();
+                        return new Token(Token.LookupIdent(identifier), identifier);
+                    }
             }
+        }
+
+        private string ReadIdentifier()
+        {
+            var startPosition = position;
+            while (char.IsLetter(ch)) ReadChar();
+            int length = position - startPosition;
+            return input.Substring(startPosition, length);
         }
 
         private void ReadChar()
