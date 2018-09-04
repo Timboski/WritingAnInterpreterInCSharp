@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REPL", "REPL\REPL.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractSyntaxTree", "AbstractSyntaxTree\AbstractSyntaxTree.csproj", "{EBB282D3-1B66-44DB-B2F6-AB09C117E7DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "Parser\Parser.csproj", "{D2E76649-E811-4862-A1B8-AC26831FD5DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EBB282D3-1B66-44DB-B2F6-AB09C117E7DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB282D3-1B66-44DB-B2F6-AB09C117E7DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBB282D3-1B66-44DB-B2F6-AB09C117E7DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2E76649-E811-4862-A1B8-AC26831FD5DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2E76649-E811-4862-A1B8-AC26831FD5DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2E76649-E811-4862-A1B8-AC26831FD5DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2E76649-E811-4862-A1B8-AC26831FD5DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
