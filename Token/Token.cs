@@ -50,6 +50,8 @@ namespace TokenNS
 
         public static TokenType LT => "<";
         public static TokenType GT => ">";
+        public static TokenType EQ => "==";
+        public static TokenType NOT_EQ => "!=";
 
         // Delimiters
         public static TokenType COMMA => "";
