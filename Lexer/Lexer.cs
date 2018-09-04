@@ -139,12 +139,17 @@ namespace LexerNS
         private void ReadChar()
         {
             // Get character.
-            if (readPosition >= input.Length) ch = '\0';
-            else ch = input[readPosition];
+            ch = PeekChar();
 
             // Increment positions.
             position = readPosition;
             ++readPosition;
+        }
+
+        private char PeekChar()
+        {
+            if (readPosition >= input.Length) return '\0';
+            return input[readPosition];
         }
     }
 }
