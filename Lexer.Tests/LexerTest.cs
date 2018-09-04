@@ -116,6 +116,42 @@ namespace LexerNS.Tests
             TestNextToken(input, tests);
         }
 
+        [TestCase]
+        public void TestNextToken_ExtendKeywordSet()
+        {
+            // Arrange
+            var input = string.Join(System.Environment.NewLine, new[] {
+                "if (5 < 10) {",
+                "  return true;",
+                "} else {",
+                "  return false;",
+                "}"
+            });
+
+            var tests = new(TokenType expectedType, string expectedLiteral)[] {
+                ( Token.IF, "if" ),
+                ( Token.LPAREN, "(" ),
+                ( Token.INT, "5" ),
+                ( Token.LT, "<" ),
+                ( Token.INT, "10" ),
+                ( Token.RPAREN, ")" ),
+                ( Token.LBRACE, "{" ),
+                ( Token.RETURN, "return" ),
+                ( Token.TRUE, "true" ),
+                ( Token.SEMICOLON, ";" ),
+                ( Token.RBRACE, "}" ),
+                ( Token.ELSE, "else" ),
+                ( Token.LBRACE, "{" ),
+                ( Token.RETURN, "return" ),
+                ( Token.FALSE, "false" ),
+                ( Token.SEMICOLON, ";" ),
+                ( Token.RBRACE, "}" )
+            };
+
+            // Act and Assert
+            TestNextToken(input, tests);
+        }
+
         private static void TestNextToken(string input, (TokenType expectedType, string expectedLiteral)[] tests)
         {
             // Act
