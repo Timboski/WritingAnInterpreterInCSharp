@@ -38,6 +38,13 @@ namespace TokenNS
         // Operators
         public static TokenType ASSIGN => "=";
         public static TokenType PLUS => "+";
+        public static TokenType MINUS => "-";
+        public static TokenType BANG => "!";
+        public static TokenType ASTERISK => "*";
+        public static TokenType SLASH => "/";
+
+        public static TokenType LT => "<";
+        public static TokenType GT => ">";
 
         // Delimiters
         public static TokenType COMMA => "";
