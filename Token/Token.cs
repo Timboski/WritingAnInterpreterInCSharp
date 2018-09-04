@@ -8,7 +8,12 @@ namespace TokenNS
         private static Dictionary<string, TokenType> keywords = new Dictionary<string, TokenType>
         {
             {  "fn", Token.FUNCTION },
-            {  "let", Token.LET }
+            {  "let", Token.LET },
+            {  "true", Token.TRUE },
+            {  "false", Token.FALSE },
+            {  "if", Token.IF },
+            {  "else", Token.ELSE },
+            {  "return", Token.RETURN }
         };
 
         public Token(TokenType tokenType, char literal) : this(tokenType, literal.ToString())
@@ -59,6 +64,11 @@ namespace TokenNS
         // Keywords
         public static TokenType FUNCTION => "FUNCTION";
         public static TokenType LET => "LET";
+        public static TokenType TRUE => "TRUE";
+        public static TokenType FALSE => "FALSE";
+        public static TokenType IF => "IF";
+        public static TokenType ELSE => "ELSE";
+        public static TokenType RETURN => "RETURN";
 
         public static TokenType LookupIdent(string identifier)
         {
