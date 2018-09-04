@@ -152,6 +152,30 @@ namespace LexerNS.Tests
             TestNextToken(input, tests);
         }
 
+        [TestCase]
+        public void TestNextToken_EquivalenceOperators()
+        {
+            // Arrange
+            var input = string.Join(System.Environment.NewLine, new[] {
+                "10 == 10;",
+                "10 != 9;"
+            });
+
+            var tests = new(TokenType expectedType, string expectedLiteral)[] {
+                ( Token.INT, "10" ),
+                ( Token.EQ, "==" ),
+                ( Token.INT, "10" ),
+                ( Token.SEMICOLON, ";" ),
+                ( Token.INT, "10" ),
+                ( Token.NOT_EQ, "!=" ),
+                ( Token.INT, "9" ),
+                ( Token.SEMICOLON, ";" ),
+            };
+
+            // Act and Assert
+            TestNextToken(input, tests);
+        }
+
         private static void TestNextToken(string input, (TokenType expectedType, string expectedLiteral)[] tests)
         {
             // Act
