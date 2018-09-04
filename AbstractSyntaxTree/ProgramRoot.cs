@@ -6,7 +6,7 @@ namespace AbstractSyntaxTree
     /// NOTE: Changed name to ProgramRoot so does not get
     /// confused with a 'Program' entry class.
     /// </summary>
-    class ProgramRoot : INode
+    public class ProgramRoot : INode
     {
         private IStatement[] statements;
 
