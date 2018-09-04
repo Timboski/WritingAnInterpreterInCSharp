@@ -25,7 +25,17 @@ namespace LexerNS
             {
                 case '=':
                     {
-                        token = new Token(Token.ASSIGN, ch);
+                        if (PeekChar() == '=')
+                        {
+                            var literal = ch.ToString();
+                            ReadChar();
+                            literal += ch.ToString();
+                            token = new Token(Token.EQ, literal);
+                        }
+                        else
+                        {
+                            token = new Token(Token.ASSIGN, ch);
+                        }
                         break;
                     }
                 case ';':
@@ -60,7 +70,17 @@ namespace LexerNS
                     }
                 case '!':
                     {
-                        token = new Token(Token.BANG, ch);
+                        if (PeekChar() == '=')
+                        {
+                            var literal = ch.ToString();
+                            ReadChar();
+                            literal += ch.ToString();
+                            token = new Token(Token.NOT_EQ, literal);
+                        }
+                        else
+                        {
+                            token = new Token(Token.BANG, ch);
+                        }
                         break;
                     }
                 case '/':
