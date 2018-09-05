@@ -1,6 +1,6 @@
-﻿using System;
-using AbstractSyntaxTree;
+﻿using AbstractSyntaxTree;
 using LexerNS;
+using System.Collections.Generic;
 using TokenNS;
 
 namespace ParserNS
@@ -10,6 +10,7 @@ namespace ParserNS
         private Lexer lexer;
         private Token curToken;
         private Token peekToken;
+        private List<string> errors = new List<string>();
 
         public Parser(Lexer lexer)
         {
@@ -31,6 +32,11 @@ namespace ParserNS
             }
             return program;
         }
+
+        public string[] Errors() => errors.ToArray();
+
+        public void PeekError(TokenType token) 
+            => errors.Add($"Expected next token to be {(string)token}, got {(string)peekToken.Type} instead.");
 
         private IStatement ParseStatement()
         {
@@ -60,7 +66,11 @@ namespace ParserNS
 
         private bool ExpectPeek(TokenType tokenType)
         {
-            if (!PeekTokenIs(tokenType)) return false;
+            if (!PeekTokenIs(tokenType))
+            {
+                PeekError(tokenType);
+                return false;
+            }
 
             NextToken();
             return true;

@@ -24,6 +24,11 @@ namespace ParserNS.Tests
             var lexer = new Lexer(input);
             var parser = new Parser(lexer);
             var program = parser.ParseProgram();
+            var errors = string.Join(Environment.NewLine, parser.Errors());
+            Assert.False(
+                parser.Errors().Any(), 
+                $"Found {parser.Errors().Count()} parser errors:{Environment.NewLine}{errors}"
+            );
 
             // Assert.
             Assert.NotNull(program, "ParseProgram() returned null");
