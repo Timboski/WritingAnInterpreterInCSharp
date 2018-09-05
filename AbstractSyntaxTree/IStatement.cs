@@ -1,6 +1,6 @@
 ﻿namespace AbstractSyntaxTree
 {
-    interface IStatement : INode
+    public interface IStatement : INode
     {
     }
 }

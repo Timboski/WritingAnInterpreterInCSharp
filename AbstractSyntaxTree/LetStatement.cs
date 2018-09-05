@@ -2,12 +2,12 @@
 
 namespace AbstractSyntaxTree
 {
-    class LetStatement : IStatement
+    public class LetStatement : IStatement
     {
-        private Token token; // The LET token.
-        private Identifier name;
-        private IExpression value;
+        public Token Token { get; set; } // The LET token.
+        public Identifier Name { get; set; }
+        public IExpression Value { get; set; }
 
-        public string TokenLiteral() => token.Literal;
+        public string TokenLiteral() => Token.Literal;
     }
 }

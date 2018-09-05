@@ -2,11 +2,11 @@
 
 namespace AbstractSyntaxTree
 {
-    internal class Identifier : IExpression
+    public class Identifier : IExpression
     {
-        Token token; // The IDENT token.
-        string value;
+        public Token Token { get; set; } // The IDENT token.
+        public string Value { get; set; }
 
-        public string TokenLiteral() => token.Literal;
+    public string TokenLiteral() => Token.Literal;
     }
 }

@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Token", "Token\Token.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lexer", "Lexer\Lexer.csproj", "{955FD686-BF86-4401-A8B3-A6B972393A02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REPL", "REPL\REPL.csproj", "{A9195133-B7C7-40AB-AFFB-A1EE935CC7F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "REPL", "REPL\REPL.csproj", "{A9195133-B7C7-40AB-AFFB-A1EE935CC7F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractSyntaxTree", "AbstractSyntaxTree\AbstractSyntaxTree.csproj", "{EBB282D3-1B66-44DB-B2F6-AB09C117E7DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractSyntaxTree", "AbstractSyntaxTree\AbstractSyntaxTree.csproj", "{EBB282D3-1B66-44DB-B2F6-AB09C117E7DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "Parser\Parser.csproj", "{D2E76649-E811-4862-A1B8-AC26831FD5DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parser", "Parser\Parser.csproj", "{D2E76649-E811-4862-A1B8-AC26831FD5DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser.Tests", "Parser.Tests\Parser.Tests.csproj", "{813D13F6-4C65-4165-B9F9-02700156B740}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D2E76649-E811-4862-A1B8-AC26831FD5DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2E76649-E811-4862-A1B8-AC26831FD5DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2E76649-E811-4862-A1B8-AC26831FD5DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{813D13F6-4C65-4165-B9F9-02700156B740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{813D13F6-4C65-4165-B9F9-02700156B740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{813D13F6-4C65-4165-B9F9-02700156B740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{813D13F6-4C65-4165-B9F9-02700156B740}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

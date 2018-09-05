@@ -8,12 +8,12 @@ namespace AbstractSyntaxTree
     /// </summary>
     public class ProgramRoot : INode
     {
-        private IStatement[] statements;
+        public IStatement[] Statements { get; set; }
 
         public string TokenLiteral()
         {
-            if (!statements.Any()) return "";
-            return statements[0].TokenLiteral();
+            if (!Statements.Any()) return "";
+            return Statements[0].TokenLiteral();
         }
     }
 }

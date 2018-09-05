@@ -1,6 +1,6 @@
 ﻿namespace AbstractSyntaxTree
 {
-    interface IExpression : INode
+    public interface IExpression : INode
     {
     }
 }
