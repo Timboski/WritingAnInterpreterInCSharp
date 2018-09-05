@@ -4,9 +4,15 @@ namespace AbstractSyntaxTree
 {
     public class Identifier : IExpression
     {
-        public Token Token { get; set; } // The IDENT token.
-        public string Value { get; set; }
+        public Identifier(Token token)
+        {
+            Token = token;
+            Value = token.Literal;
+        }
 
-    public string TokenLiteral() => Token.Literal;
+        public Token Token { get; } // The IDENT token.
+        public string Value { get; }
+
+        public string TokenLiteral() => Token.Literal;
     }
 }

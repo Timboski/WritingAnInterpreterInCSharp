@@ -43,10 +43,10 @@ namespace ParserNS
 
         private IStatement ParseLetStatement()
         {
-            var letStatement = new LetStatement() { Token = curToken };
+            var letStatement = new LetStatement(curToken);
 
             if (!ExpectPeek(Token.IDENT)) return null;
-            letStatement.Name = new Identifier() { Token = curToken, Value = curToken.Literal };
+            letStatement.Name = new Identifier(curToken);
             if (!ExpectPeek(Token.ASSIGN)) return null;
 
             // TODO: We're skipping the expressions until we encounter a semicolon.

@@ -4,7 +4,9 @@ namespace AbstractSyntaxTree
 {
     public class LetStatement : IStatement
     {
-        public Token Token { get; set; } // The LET token.
+        public LetStatement(Token token) => Token = token;
+
+        public Token Token { get; } // The LET token.
         public Identifier Name { get; set; }
         public IExpression Value { get; set; }
 
