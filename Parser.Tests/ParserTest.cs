@@ -36,16 +36,17 @@ namespace ParserNS.Tests
             {
                 var statement = program.Statements[testIndex];
                 TestLetStatement(statement, expectedIdentifier);
+                ++testIndex;
             }
         }
 
         private void TestLetStatement(IStatement statement, string expectedIdentifier)
         {
-            Assert.AreSame((string)Token.LET, (string)statement.TokenLiteral(), "TokenLiteral not 'let'.");
+            Assert.AreEqual("let", statement.TokenLiteral(), "TokenLiteral not 'let'.");
             var letStatement = statement as LetStatement;
             Assert.NotNull(letStatement, "Statement is not LET statement.");
-            Assert.AreSame(expectedIdentifier, letStatement.Name.Value, "Unexpected Name.Value.");
-            Assert.AreSame(expectedIdentifier, letStatement.Name.TokenLiteral(), "Unexpected Name.TokenLiteral.");
+            Assert.AreEqual(expectedIdentifier, letStatement.Name.Value, "Unexpected Name.Value.");
+            Assert.AreEqual(expectedIdentifier, letStatement.Name.TokenLiteral(), "Unexpected Name.TokenLiteral.");
         }
     }
 }

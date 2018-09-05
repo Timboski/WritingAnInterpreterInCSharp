@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace AbstractSyntaxTree
 {
@@ -8,7 +9,7 @@ namespace AbstractSyntaxTree
     /// </summary>
     public class ProgramRoot : INode
     {
-        public IStatement[] Statements { get; set; }
+        public List<IStatement> Statements { get; } = new List<IStatement>();
 
         public string TokenLiteral()
         {
