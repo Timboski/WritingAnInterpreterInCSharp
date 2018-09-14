@@ -53,5 +53,37 @@ namespace ParserNS.Tests
             Assert.AreEqual(expectedIdentifier, letStatement.Name.Value, "Unexpected Name.Value.");
             Assert.AreEqual(expectedIdentifier, letStatement.Name.TokenLiteral(), "Unexpected Name.TokenLiteral.");
         }
+
+        [TestCase]
+        public void TestReturnStatements()
+        {
+            // Arrange.
+            var input = string.Join(System.Environment.NewLine, new[] {
+                "return 5;",
+                "return 10;",
+                "return 993322;"
+            });
+
+            // Act.
+            var lexer = new Lexer(input);
+            var parser = new Parser(lexer);
+            var program = parser.ParseProgram();
+            var errors = string.Join(Environment.NewLine, parser.Errors());
+            Assert.False(
+                parser.Errors().Any(),
+                $"Found {parser.Errors().Count()} parser errors:{Environment.NewLine}{errors}"
+            );
+
+            // Assert.
+            Assert.NotNull(program, "ParseProgram() returned null");
+            Assert.AreEqual(3, program.Statements.Count(), "program.Statements does not contain 3 statements.");
+
+            foreach (var statement in program.Statements)
+            {
+                var letStatement = statement as ReturnStatement;
+                Assert.NotNull(letStatement, "Statement is not RETURN statement.");
+                Assert.AreEqual("return", statement.TokenLiteral(), "TokenLiteral not 'return'.");
+            }
+        }
     }
 }
