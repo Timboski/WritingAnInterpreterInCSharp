@@ -43,6 +43,7 @@ namespace ParserNS
             switch (curToken.Type)
             {
                 case var token when token == Token.LET: return ParseLetStatement();
+                case var token when token == Token.RETURN: return ParseReturnStatement();
                 default: return null;
             }
         }
@@ -58,6 +59,17 @@ namespace ParserNS
             // TODO: We're skipping the expressions until we encounter a semicolon.
             while (!CurrTokenIs(Token.SEMICOLON)) NextToken();
             return letStatement;
+        }
+
+        private IStatement ParseReturnStatement()
+        {
+            var returnStatement = new ReturnStatement(curToken);
+            NextToken();
+
+            // TODO: We're skipping the expressions until we encounter a semicolon
+            while (!CurrTokenIs(Token.SEMICOLON)) NextToken();
+
+            return returnStatement;
         }
 
         private bool CurrTokenIs(TokenType tokenType) => curToken.Type == tokenType;
