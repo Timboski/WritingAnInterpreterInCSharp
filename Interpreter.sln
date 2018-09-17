@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractSyntaxTree", "Abstr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parser", "Parser\Parser.csproj", "{D2E76649-E811-4862-A1B8-AC26831FD5DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser.Tests", "Parser.Tests\Parser.Tests.csproj", "{813D13F6-4C65-4165-B9F9-02700156B740}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parser.Tests", "Parser.Tests\Parser.Tests.csproj", "{813D13F6-4C65-4165-B9F9-02700156B740}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractSyntaxTree.Tests", "AbstractSyntaxTree.Tests\AbstractSyntaxTree.Tests.csproj", "{65AFDF73-93A7-4549-AF80-2962C03B60DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{813D13F6-4C65-4165-B9F9-02700156B740}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{813D13F6-4C65-4165-B9F9-02700156B740}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{813D13F6-4C65-4165-B9F9-02700156B740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65AFDF73-93A7-4549-AF80-2962C03B60DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65AFDF73-93A7-4549-AF80-2962C03B60DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65AFDF73-93A7-4549-AF80-2962C03B60DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65AFDF73-93A7-4549-AF80-2962C03B60DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
