@@ -15,6 +15,7 @@ namespace AbstractSyntaxTree
         {
             var sb = new StringBuilder();
             sb.Append(TokenLiteral());
+            sb.Append(" ");
             sb.Append(Name.String());
             sb.Append(" = ");
             if (Value != null) sb.Append(Value.String());
