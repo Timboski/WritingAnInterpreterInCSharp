@@ -12,8 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lexer\Lexer.csproj" />
-    <ProjectReference Include="..\Token\Token.csproj" />
+    <ProjectReference Include="..\AbstractSyntaxTree\AbstractSyntaxTree.csproj" />
   </ItemGroup>
 
 </Project>
