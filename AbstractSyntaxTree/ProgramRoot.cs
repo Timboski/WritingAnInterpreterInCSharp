@@ -11,6 +11,9 @@ namespace AbstractSyntaxTree
     {
         public List<IStatement> Statements { get; } = new List<IStatement>();
 
+        public string String() => 
+            string.Join("", Statements.Select(s => s.ToString()));
+
         public string TokenLiteral()
         {
             if (!Statements.Any()) return "";

@@ -9,6 +9,12 @@ namespace AbstractSyntaxTree
         public Token Token { get; } // The RETURN token.
         public IExpression Expression { get; set; }
 
+        public string String()
+        {
+            if (Expression == null) return "";
+            return Expression.String();
+        }
+
         public string TokenLiteral() => Token.Literal;
     }
 }

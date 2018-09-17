@@ -13,6 +13,8 @@ namespace AbstractSyntaxTree
         public Token Token { get; } // The IDENT token.
         public string Value { get; }
 
+        public string String() => Value;
+
         public string TokenLiteral() => Token.Literal;
     }
 }
